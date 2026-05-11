@@ -1,0 +1,101 @@
+/* =============================================
+   CARRITO
+   ============================================= */
+
+.carrito-container {
+    min-height: 60vh;
+}
+
+.carrito-container h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #000;
+    padding-bottom: 1rem;
+}
+
+.table thead th {
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.resumen-total {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.resumen-total h4 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.resumen-total h4:last-child {
+    font-size: 1.3rem;
+    color: #000;
+    border-top: 2px solid #000;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-comprar {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+}
+
+.btn-comprar:hover {
+    background: #333;
+    color: #fff;
+}
+
+.btn-vaciar {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.btn-vaciar:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* --- Tema oscuro --- */
+body.tema-oscuro .carrito-container h2 {
+    border-bottom-color: #fff;
+}
+
+body.tema-oscuro .resumen-total {
+    background: #1f1f1f;
+    border: 1px solid #333;
+}
+
+body.tema-oscuro .resumen-total h4:last-child {
+    color: #fff;
+    border-top-color: #fff;
+}
+
+body.tema-oscuro .btn-comprar {
+    background: #1f1f1f;
+    border-color: #fff;
+}
+
+body.tema-oscuro .btn-comprar:hover {
+    background: #fff;
+    color: #000;
+}
+
+body.tema-oscuro .btn-vaciar {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+body.tema-oscuro .btn-vaciar:hover {
+    background: #fff;
+    color: #000;
+}

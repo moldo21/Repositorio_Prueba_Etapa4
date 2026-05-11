@@ -1,0 +1,70 @@
+/* =============================================
+   PÁGINA PRINCIPAL
+   ============================================= */
+
+.hero {
+    background: #000;
+    color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+    margin: 0 0 3rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.btn-light-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-light-outline:hover {
+    background: #fff;
+    color: #000;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 3rem 0 2rem;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 1rem;
+    color: #000;
+}
+
+.btn-dark-fill {
+    background: #000;
+    color: #fff;
+}
+
+.btn-dark-fill:hover {
+    background: #333;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p  { font-size: 1rem; }
+    .hero    { padding: 3rem 0; }
+}
+
+/* --- Tema oscuro --- */
+body.tema-oscuro .hero {
+    background: #1a1a1a;
+}
+
+body.tema-oscuro .section-title {
+    border-bottom-color: #fff;
+    color: #e0e0e0;
+}

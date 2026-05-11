@@ -1,0 +1,404 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Muebles - Tienda de Muebles",
+        "description": "API REST para catalogo, categorias y galeria de muebles",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://api_muebles.test/api/v1",
+            "description": "Servidor local"
+        }
+    ],
+    "paths": {
+        "/muebles": {
+            "get": {
+                "tags": [
+                    "Muebles"
+                ],
+                "summary": "Listar muebles",
+                "operationId": "bb8632991d188edfd8f9ba0008e64495",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Muebles"
+                ],
+                "summary": "Crear mueble",
+                "operationId": "39644a12391b3dee62d28fd863cf3556",
+                "responses": {
+                    "201": {
+                        "description": "Creado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/muebles/{id}": {
+            "get": {
+                "tags": [
+                    "Muebles"
+                ],
+                "summary": "Detalle mueble",
+                "operationId": "28080dc44ed57d6763d72a6697f42b37",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Muebles"
+                ],
+                "summary": "Editar mueble",
+                "operationId": "ad2e03e820016515696568c2a2ad420a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Muebles"
+                ],
+                "summary": "Eliminar mueble",
+                "operationId": "e4c0a17c9e7dad5e09bb058bd2a6f557",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/categorias": {
+            "get": {
+                "tags": [
+                    "Categorias"
+                ],
+                "summary": "Listar categorias",
+                "operationId": "b67d9df0861ac467ead9771bee06d4e5",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Categorias"
+                ],
+                "summary": "Crear categoria",
+                "operationId": "609974d2d5f46fd8ce9171051e2d8927",
+                "responses": {
+                    "201": {
+                        "description": "Creado"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/categorias/{id}": {
+            "get": {
+                "tags": [
+                    "Categorias"
+                ],
+                "summary": "Detalle categoria",
+                "operationId": "d60c88ab39d5837ea68bcc7b27668a0e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Categorias"
+                ],
+                "summary": "Editar categoria",
+                "operationId": "c18aa21e8eb48cebd471ebac27b9c6a6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Categorias"
+                ],
+                "summary": "Eliminar categoria",
+                "operationId": "486ebc767db3e6a323a5f45c370b57f8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/muebles/{productoId}/galeria": {
+            "post": {
+                "tags": [
+                    "Galeria"
+                ],
+                "summary": "Subir imagenes a galeria",
+                "operationId": "aa14b5620b29bb96a05c0f5f626ffed7",
+                "parameters": [
+                    {
+                        "name": "productoId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/muebles/{productoId}/galeria/{galeriaId}": {
+            "delete": {
+                "tags": [
+                    "Galeria"
+                ],
+                "summary": "Eliminar imagen de galeria",
+                "operationId": "9e4eaf6555a4ae68dead3fb77c32b979",
+                "parameters": [
+                    {
+                        "name": "productoId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "galeriaId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/muebles/{productoId}/galeria/{galeriaId}/principal": {
+            "post": {
+                "tags": [
+                    "Galeria"
+                ],
+                "summary": "Marcar imagen principal de galeria",
+                "operationId": "ba026ae44027a715ff1c77a33054c6bf",
+                "parameters": [
+                    {
+                        "name": "productoId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "galeriaId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/muebles/{productoId}/galeria/reordenar": {
+            "post": {
+                "tags": [
+                    "Galeria"
+                ],
+                "summary": "Reordenar galeria del producto",
+                "operationId": "4647562e17eb2d538ffdb7dc777784c2",
+                "parameters": [
+                    {
+                        "name": "productoId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "orden": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "bearerFormat": "Sanctum",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Muebles"
+        },
+        {
+            "name": "Categorias"
+        },
+        {
+            "name": "Galeria"
+        }
+    ]
+}
