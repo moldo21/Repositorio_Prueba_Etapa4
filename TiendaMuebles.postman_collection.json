@@ -1,0 +1,280 @@
+{
+  "info": {
+    "_postman_id": "3da7c3a5-ee34-4090-acd5-62f4c9a34065",
+    "name": "TiendaMuebles",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54733923",
+    "_collection_link": "https://go.postman.co/collection/54733923-3da7c3a5-ee34-4090-acd5-62f4c9a34065?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "API muebles",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Valida que la respuesta es 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://api_muebles.test/api/v1/muebles",
+          "protocol": "http",
+          "host": [
+            "api_muebles",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "muebles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API categoria",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://api_muebles.test/api/v1/categorias",
+          "protocol": "http",
+          "host": [
+            "api_muebles",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "categorias"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let ct = pm.response.headers.get(\"Content-Type\") || \"\";\r",
+              "if (ct.includes(\"application/json\")) {\r",
+              "  let res = pm.response.json();\r",
+              "  if (res.token) pm.collectionVariables.set(\"token\", res.token);\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"tu_email\",\r\n  \"password\": \"tu_password\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://api_usuarios.test/api/v1/login",
+          "protocol": "http",
+          "host": [
+            "api_usuarios",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request de login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@tienda.com\",\r\n  \"password\": \"password\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://api_usuarios.test/api/v1/login",
+          "protocol": "http",
+          "host": [
+            "api_usuarios",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crear mueble",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Silla prueba\",\r\n  \"descripcion\": \"Silla para test\",\r\n  \"precio\": 49.99,\r\n  \"stock\": 8,\r\n  \"categoria_id\": 1,\r\n  \"destacado\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://api_muebles.test/api/v1/muebles",
+          "protocol": "http",
+          "host": [
+            "api_muebles",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "muebles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar mueble",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|9H56WaBp4SLWASZTLH9zt76qTbZusZ0kqPHx9mAcd7e5d94f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Silla entrega editada\",\r\n  \"descripcion\": \"Prueba postman edit\",\r\n  \"precio\": 89.99,\r\n  \"stock\": 5,\r\n  \"categoria_id\": 1,\r\n  \"destacado\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://api_muebles.test/api/v1/muebles/22",
+          "protocol": "http",
+          "host": [
+            "api_muebles",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "muebles",
+            "22"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "eliminar mueble",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "1|9H56WaBp4SLWASZTLH9zt76qTbZusZ0kqPHx9mAcd7e5d94f",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://api_muebles.test/api/v1/muebles/22",
+          "protocol": "http",
+          "host": [
+            "api_muebles",
+            "test"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "muebles",
+            "22"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
